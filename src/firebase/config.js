@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAse2X2TJs398rP367Iyp2lSB0QIml-DaI",
-  authDomain: "time-tracher-app.firebaseapp.com",
+  apiKey: "",
+  authDomain: "",
   projectId: "time-tracher-app",
-  storageBucket: "time-tracher-app.firebasestorage.app",
-  messagingSenderId: "807820079699",
-  appId: "1:807820079699:web:a36dc70e7a12201f2ccca6"
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 // Initialize Firebase
