@@ -21,6 +21,7 @@ import { Link } from "react-router-dom";
 import Task from "./Task";
 import app from "../firebase/config";
 
+
 //Auth instance
 const auth = getAuth(app);
 //Database instance
@@ -162,18 +163,18 @@ function Reports() {
   };
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
-      <div className="container mx-auto px-4 py-10">
+      <div className="container px-4 py-10 mx-auto">
         <header className="flex justify-between py-6">
           <h1 className="text-4xl font-bold text-white">Time Tracker</h1>
           <button className="text-white" title="Logout">
             <AiOutlineLogout onClick={handleLogout} className="text-2xl" />
           </button>
         </header>
-        <div className="bg-white p-4 my-6 rounded-md text-black max-w-md mx-auto">
-          <h2 className="text-lg font-semibold mb-2">User Profile</h2>
+        <div className="max-w-md p-4 mx-auto my-6 text-black bg-white rounded-md">
+          <h2 className="mb-2 text-lg font-semibold">User Profile</h2>
           <div className="flex items-center">
             <img
-              className="h-16 w-16 rounded-full"
+              className="w-16 h-16 rounded-full"
               src={auth.currentUser.photoURL}
               alt="profile"
             />
@@ -189,32 +190,32 @@ function Reports() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center mb-8">
-          <div className="bg-gradient-to-r from-green-400 to-blue-500 p-4 rounded-md text-white shadow-lg">
+        <div className="grid grid-cols-1 gap-4 mb-8 text-center sm:grid-cols-2 md:grid-cols-3">
+          <div className="p-4 text-white rounded-md shadow-lg bg-gradient-to-r from-green-400 to-blue-500">
             <h2 className="text-lg font-semibold">This Week</h2>
             <p className="text-2xl font-bold">{formatTime(thisWeekTotal)}</p>
           </div>
-          <div className="bg-gradient-to-r from-purple-400 to-pink-500 p-4 rounded-md text-white shadow-lg">
+          <div className="p-4 text-white rounded-md shadow-lg bg-gradient-to-r from-purple-400 to-pink-500">
             <h2 className="text-lg font-semibold">This Month</h2>
             <p className="text-2xl font-bold">{formatTime(thisMonthTotal)}</p>
           </div>
-          <div className="bg-gradient-to-r from-red-400 to-yellow-500 p-4 rounded-md text-white shadow-lg">
+          <div className="p-4 text-white rounded-md shadow-lg bg-gradient-to-r from-red-400 to-yellow-500">
             <h2 className="text-lg font-semibold">Total</h2>
             <p className="text-2xl font-bold">{formatTime(totalTime)}</p>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-red-400 to-yellow-500 p-4 rounded-md shadow-lg max-w-3xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between mb-4">
+        <div className="max-w-3xl p-4 mx-auto rounded-md shadow-lg bg-gradient-to-r from-red-400 to-yellow-500">
+          <div className="flex flex-col justify-between mb-4 sm:flex-row">
             <Link
               to="/create-task"
-              className="w-full sm:w-auto bg-gradient-to-r sm:mr-4 mb-4 sm:mb-0 from-red-500 to-pink-500 p-2 rounded text-white"
+              className="w-full p-2 mb-4 text-white rounded sm:w-auto bg-gradient-to-r sm:mr-4 sm:mb-0 from-red-500 to-pink-500"
             >
               Add New Task
             </Link>
             <button
               onClick={exportTasks}
-              className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded text-white"
+              className="w-full p-2 text-white rounded sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500"
             >
               Export
             </button>

@@ -3,6 +3,9 @@ import HomePage from "./pages/Homepage";
 import Login from "./pages/Login";
 import CreateTask from "./pages/CreateTask";
 import Footer from "./components/Footer";
+import Reports from "./components/Reports";
+import PrivateRoute from "./components/PrivateRoute";
+
 
 export default function App() {
   return (
@@ -10,7 +13,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/CreateTask" element={<CreateTask />} />
+        <Route path="/createtask" element={<CreateTask />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route
+          path="/reports"
+          element={
+            <PrivateRoute>
+              <Reports />
+            </PrivateRoute>
+          }
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
