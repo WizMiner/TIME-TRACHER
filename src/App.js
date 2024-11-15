@@ -13,8 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/createtask" element={<CreateTask />} />
-        <Route path="/reports" element={<Reports />} />
+        <Route path="/create-task" element={<CreateTask />} />
         <Route
           path="/reports"
           element={
