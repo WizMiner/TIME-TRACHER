@@ -15,7 +15,7 @@ function CreateTaskPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setsuccess] = useState(false);
-  const navigate = useNavigate();
+//  const navigate = useNavigate();
 
   //Create task handler
   const handleSubmit = async (event) => {
@@ -40,19 +40,19 @@ function CreateTaskPage() {
     }
   };
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 min-h-screen flex items-center justify-center">
-      <div className="bg-white bg-opacity-10 p-10 rounded-lg backdrop-filter backdrop-blur-lg shadow-lg max-w-md w-full">
-        <h1 className="text-4xl font-bold text-white mb-4 text-shadow flex items-center space-x-2">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500">
+      <div className="w-full max-w-md p-10 bg-white rounded-lg shadow-lg bg-opacity-10 backdrop-filter backdrop-blur-lg">
+        <h1 className="flex items-center mb-4 space-x-2 text-4xl font-bold text-white text-shadow">
           <AiOutlineFieldTime />
           <span>Create a new task</span>
         </h1>
-        <p className="text-white text-opacity-80 mb-8">
+        <p className="mb-8 text-white text-opacity-80">
           Turn your plans into achievable tasks. Start by naming your task
           below.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-8">
-            <label htmlFor="task" className="block font-bold text-white mb-2">
+            <label htmlFor="task" className="block mb-2 font-bold text-white">
               Task description
             </label>
             <input
@@ -61,7 +61,7 @@ function CreateTaskPage() {
               required
               value={task}
               onChange={(e) => setTask(e.target.value)}
-              className="w-full bg-transparent bg-opacity-50 text-white border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white placeholder-white"
+              className="w-full px-4 py-2 text-white placeholder-white bg-transparent bg-opacity-50 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-white"
               placeholder="e.g. Complete React Project"
               style={{
                 color: "white",
@@ -73,14 +73,14 @@ function CreateTaskPage() {
             <button
               disabled={loading}
               type="submit"
-              className="w-full bg-gradient-to-r from-pink-500 to-purple-500 bg-opacity-50 hover:bg-opacity-75 text-white py-3 px-6 rounded focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full px-6 py-3 text-white bg-opacity-50 rounded bg-gradient-to-r from-pink-500 to-purple-500 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-white"
             >
               {loading ? "Loading please wait" : "Create Task"}
             </button>
           </div>
-          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+          {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
           {success && (
-            <p className="text-green-500 text-sm mt-2">
+            <p className="mt-2 text-sm text-green-500">
               Task created successfully
             </p>
           )}
